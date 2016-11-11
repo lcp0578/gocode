@@ -13,4 +13,19 @@ func main() {
 		fmt.Println(err.Error())
 	}
 	fmt.Println(d)
+
+	t := time.Now()
+	t2 := t.Add(24 * time.Hour)
+	fmt.Println(t2)
+	sub := t2.Sub(t)
+	fmt.Println(sub)
+	if t2.After(t) {
+		fmt.Println("t2 > t")
+	}
+	if t.Before(t2) {
+		fmt.Println("t < t2")
+	}
+	if t.Equal(t) {
+		fmt.Println("t = t")
+	}
 }
