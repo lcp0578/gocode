@@ -1,0 +1,26 @@
+#golang 25 keyword
+break
+case
+chan
+const
+continue
+default
+defter
+else
+fallthrough
+for
+func
+go 
+goto
+if
+import
+interface
+map
+package
+range
+return
+select
+struct
+switch
+type
+var
