@@ -13,4 +13,9 @@ func main() {
 	const c float32 = 1.2
 	d := c + v // v 自动转换为float32
 	fmt.Printf("%T, %v\n", d, d)
+
+	// e := 23
+	var e uint32 = 23
+	x := 1 << e
+	println(x)
 }
