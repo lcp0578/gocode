@@ -19,4 +19,5 @@ func main() {
 	for k, v := range arrFile {
 		fmt.Println(k, "\t", v.Name(), "\t", v.IsDir())
 	}
+	// GVfmumMP_ksetegQQIOlZIVVIAFbhSR4xHT5kGAGsoQ
 }
