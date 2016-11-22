@@ -24,7 +24,9 @@ func (fn *bindFunc) UnmarshalJSON(b []byte) error {
 	if err := json.Unmarshal(b, &name); err != nil {
 		return err
 	}
+	fmt.Println("name:", name)
 	found := registry[name]
+	fmt.Println("found", found)
 	// get the function out of our function registry
 	if found == nil {
 		return fmt.Errorf("Unknow function in (*bindFunc) UnmarshalJSON: %s", name)
@@ -40,7 +42,9 @@ func main() {
 	if err := json.Unmarshal(jsonDoc, &fns); err != nil {
 		log.Fatal(err)
 	}
+	fmt.Println(fns)
 	fn := fns[rand.Intn(len(fns))]
+	fmt.Println(fn)
 	x := fn(12, 5)
 	fmt.Println(x)
 }
