@@ -19,6 +19,19 @@ var registry = map[string]bindFunc{
 	"div": func(x, y int) int { return x / y },
 }
 
+/**
+摘自encoding/json/decode.go
+
+// Unmarshaler is the interface implemented by types
+// that can unmarshal a JSON description of themselves.
+// The input can be assumed to be a valid encoding of
+// a JSON value. UnmarshalJSON must copy the JSON data
+// if it wishes to retain the data after returning.
+type Unmarshaler interface {
+	UnmarshalJSON([]byte) error
+}
+//如果你定义了这个方法，  encoding/json包就会使用它去解析json数据
+**/
 func (fn *bindFunc) UnmarshalJSON(b []byte) error {
 	var name string
 	if err := json.Unmarshal(b, &name); err != nil {
