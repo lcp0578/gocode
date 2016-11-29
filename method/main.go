@@ -11,7 +11,11 @@ func (n N) toString() string {
 	return fmt.Sprintf("%#d", n)
 }
 
+func (N) test() {
+	println("test")
+}
 func main() {
 	var a N = 25
 	println(a.toString())
+	a.test()
 }
