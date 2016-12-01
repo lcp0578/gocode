@@ -4,6 +4,8 @@ import (
 	"database/sql"
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
+	"strconv"
+	"time"
 )
 
 func main() {
@@ -37,6 +39,22 @@ func main() {
 	}
 	fmt.Println(id, "\t", name, "\t", age, "\t", sex)
 	fmt.Println("============")
+	// prepare SQL
+	var stmt *sql.Stmt
+	stmt, err = db.Prepare("INSERT INTO users(name, age, sex) VALUES (?,?,?)")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println("======= START =====")
+	fmt.Println("startTime :", time.Now())
+
+	for i := 0; i < 100; i++ {
+		stmt.Exec("lcpeng"+strconv.Itoa(i), i, i%2)
+	}
+	fmt.Println("endTime :", time.Now())
+	fmt.Println("====== END ======")
+	fmt.Println("============")
 	// GET LIST
 	var rows *sql.Rows
 	rows, err = db.Query("SELECT * FROM users")
@@ -50,5 +68,5 @@ func main() {
 	}
 	rows.Close()
 	//
-	db.Exec("TRUNCATE TABLE users")
+	//db.Exec("TRUNCATE TABLE users")
 }
