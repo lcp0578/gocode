@@ -30,6 +30,11 @@ func main() {
 	fmt.Println(s2)
 	s3 := arr[3:4]
 	fmt.Println(s3)
+	var hel = "hello"
+	shel := []byte(hel)
+	shel[0] = 'c'
+	strhel := string(shel)
+	fmt.Println(shel, strhel)
 }
 
 func changeArrayValue(arr [6]int) {
