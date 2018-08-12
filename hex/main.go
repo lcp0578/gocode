@@ -22,4 +22,6 @@ func main(){
 	//	panic(err)
 	//}
 	//fmt.Println(string(bs))
+	var length int64 = 16
+	fmt.Printf("%03X", length)
 }
