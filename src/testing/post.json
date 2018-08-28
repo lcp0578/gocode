@@ -1,0 +1,20 @@
+{
+  "id":1,
+  "content": "hello world",
+  "author": {
+    "id": 2,
+    "name": "lcp0578"
+  },
+  "comments": [
+    {
+      "id": 3,
+      "content": "I like it",
+      "name": "xiaopeng"
+    },
+    {
+      "id": 4,
+      "content": "Yes",
+      "name": "handi"
+    }
+  ]
+}
